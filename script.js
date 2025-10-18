@@ -23,9 +23,9 @@ let isResponseGenerating = false;
 const API_KEY = "AIzaSyB4Lpli00Izis-wy9wcqEa9ZYq8RWxatL8";
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
-/* ---------------------------
-   Load Data & Theme
----------------------------- */
+
+//   Load Data & Theme
+
 const loadDataFromLocalstorage = () => {
   const savedChats = localStorage.getItem("saved-chats");
   const isLightMode = (localStorage.getItem("themeColor") === "light_mode");
@@ -45,9 +45,9 @@ const loadDataFromLocalstorage = () => {
   }
 };
 
-/* ---------------------------
-   Chat message helpers
----------------------------- */
+
+//   Chat message helpers
+
 const createMessageElement = (content, ...classes) => {
   const div = document.createElement("div");
   div.classList.add("message", ...classes);
@@ -156,9 +156,9 @@ const handleOutgoingChat = () => {
   setTimeout(showLoadingAnimation, 500);
 };
 
-/* ---------------------------
-   Theme & Delete
----------------------------- */
+
+//   Theme & Delete
+
 toggleThemeButton.addEventListener("click", () => {
   const isLightMode = document.body.classList.toggle("light_mode");
   localStorage.setItem("themeColor", isLightMode ? "light_mode" : "dark_mode");
@@ -174,9 +174,9 @@ deleteChatButton.addEventListener("click", () => {
   }
 });
 
-/* ---------------------------
-   Suggestions & Form
----------------------------- */
+
+//   Suggestions & Form
+
 suggestions.forEach((suggestion) => {
   suggestion.addEventListener("click", () => {
     userMessage = suggestion.querySelector(".text").innerText;
@@ -189,9 +189,9 @@ typingForm.addEventListener("submit", (e) => {
   handleOutgoingChat();
 });
 
-/* ---------------------------
-   Sign In / Sign Up Functionality
----------------------------- */
+
+//   Sign In / Sign Up Functionality
+
 showLoginLink.addEventListener("click", () => {
   signupForm.style.display = "none";
   loginForm.style.display = "flex";
@@ -221,7 +221,7 @@ loginForm.addEventListener("submit", (e) => {
 
   const storedUser = JSON.parse(localStorage.getItem("user"));
   if (storedUser && storedUser.email === email && storedUser.password === password) {
-    localStorage.setItem("loggedIn", "true"); // ✅ Persist session
+    localStorage.setItem("loggedIn", "true"); // 
     authContainer.style.display = "none";
     chatWrapper.style.display = "block";
     loadDataFromLocalstorage();
@@ -230,9 +230,9 @@ loginForm.addEventListener("submit", (e) => {
   }
 });
 
-/* ---------------------------
-   Navbar Functionality
----------------------------- */
+
+//   Navbar Functionality
+
 logoutButton.addEventListener("click", () => {
   if (confirm("Are you sure you want to logout?")) {
     localStorage.removeItem("loggedIn"); 
@@ -252,12 +252,12 @@ chatHistoryButton.addEventListener("click", () => {
   }
 });
 
-/* ---------------------------
-   Initialize
----------------------------- */
+
+//   Initialize
+
 chatWrapper.style.display = "none";
 
-// ✅ Persist login session
+//  login session
 const loggedIn = localStorage.getItem("loggedIn");
 if (loggedIn === "true") {
   authContainer.style.display = "none";
