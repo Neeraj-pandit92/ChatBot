@@ -1,6 +1,6 @@
 # Google Gemini Chatbot  
 
-🚀 **Live Demo**: [Google Gemini Chatbot](https://google-gemini-chatbot-plum.vercel.app/)  
+🚀 **Live Demo**: [Google Gemini Chatbot](https://gemini-flash-chatbot.netlify.app/)  
 
 ## 📌 Overview  
 
@@ -9,7 +9,7 @@ Google Gemini Chatbot is a web-based AI chatbot powered by Google's Gemini API. 
 ## ✨ Features  
 
 - 🌐 **Conversational AI** – Uses Google's Gemini API for intelligent responses.  
-- ⚡ **Fast & Responsive** – Deployed on Vercel for optimized performance.  
+- ⚡ **Fast & Responsive** – Deployed on Netlify for optimized performance.  
 - 🎨 **Minimalist UI** – Clean and user-friendly interface.  
 - 🔒 **Secure API Handling** – Ensures safe communication with Gemini API.  
 
@@ -18,7 +18,7 @@ Google Gemini Chatbot is a web-based AI chatbot powered by Google's Gemini API. 
 - **Frontend**: HTML, CSS, JavaScript  
 - **Backend**: Node.js, Express.js  
 - **API**: Google Gemini API  
-- **Deployment**: Vercel  
+- **Deployment**: Netlify  
 
 ## 🚀 Getting Started  
 
