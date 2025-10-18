@@ -7,6 +7,19 @@
   font-family: "Poppins", sans-serif;
 }
 
+h2 {
+  background: linear-gradient(to right, #f12424, #f4b032);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+
 :root {
   /* Dark mode colors */
   --text-color: #E3E3E3;
