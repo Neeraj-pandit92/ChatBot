@@ -170,7 +170,7 @@ deleteChatButton.addEventListener("click", () => {
     localStorage.removeItem("saved-chats");
     chatContainer.innerHTML = "";
     document.body.classList.remove("hide-header");
-    alert("All chats cleared!");
+    showToast("All chats cleared!");
   }
 });
 
@@ -209,7 +209,7 @@ signupForm.addEventListener("submit", (e) => {
   const password = document.querySelector("#signup-password").value;
 
   localStorage.setItem("user", JSON.stringify({ username, email, password }));
-  alert("Sign Up Successful! Please Sign In.");
+  showToast("Sign Up Successful! Please Sign In.");
   signupForm.style.display = "none";
   loginForm.style.display = "flex";
 });
@@ -226,9 +226,28 @@ loginForm.addEventListener("submit", (e) => {
     chatWrapper.style.display = "block";
     loadDataFromLocalstorage();
   } else {
-    alert("Invalid email or password!");
+    showToast("Invalid email or password!");
   }
 });
+
+// notification or alert function
+
+const showToast = (message, type = "info") => {
+  const toastContainer = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  toast.classList.add("toast", type);
+  toast.innerHTML = `
+    <span>${message}</span>
+    <button onclick="this.parentElement.remove()">×</button>
+  `;
+  toastContainer.appendChild(toast);
+
+  // Remove toast after 3 seconds
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+};
+
 
 
 //   Navbar Functionality
@@ -238,17 +257,17 @@ logoutButton.addEventListener("click", () => {
     localStorage.removeItem("loggedIn"); 
     authContainer.style.display = "flex";
     chatWrapper.style.display = "none";
-    alert("You have been logged out!");
+    showToast("You have been logged out!");
   }
 });
 
 chatHistoryButton.addEventListener("click", () => {
   const savedChats = localStorage.getItem("saved-chats");
   if (savedChats) {
-    alert("✅ Chat history loaded!");
+    showToast("✅ Chat history loaded!");
     chatContainer.innerHTML = savedChats;
   } else {
-    alert("No chat history found!");
+    showToast("No chat history found!");
   }
 });
 
