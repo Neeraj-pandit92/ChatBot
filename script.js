@@ -41,7 +41,7 @@ const loadDataFromLocalstorage = () => {
   // Load user info if logged in
   const user = JSON.parse(localStorage.getItem("user"));
   if (user) {
-    userNameDisplay.innerText = `${user.username} (${user.email})`;
+    userNameDisplay.innerText = `${user.username}`;
   }
 };
 
